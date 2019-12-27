@@ -1,0 +1,87 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript"> 
+
+function submitToAPI(e) {
+       e.preventDefault();
+       var URL = "https://9g4bh4auea.execute-api.eu-west-1.amazonaws.com/ContactUs";
+
+            var Namere = /[A-Za-z]{1}[A-Za-z]/;
+            if (!Namere.test($("#name-input").val())) {
+                         alert ("Name can not less than 2 char");
+                return;
+            }
+            var mobilere = /[0-9]{10}/;
+            if (!mobilere.test($("#phone-input").val())) {
+                alert ("Please enter valid mobile number");
+                return;
+            }
+            if ($("#email-input").val()=="") {
+                alert ("Please enter your email id");
+                return;
+            }
+
+            var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#email-input").val())) {
+                alert ("Please enter valid email address");
+                return;
+            }
+
+       var name = $("#name-input").val();
+       var phone = $("#phone-input").val();
+       var email = $("#email-input").val();
+       var desc = $("#description-input").val();
+       var data = {
+          name : name,
+          phone : phone,
+          email : email,
+          desc : desc
+        };
+
+       $.ajax({
+         type: "POST",
+         url : "https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+         success: function () {
+           // clear form and show a success message
+           alert("Successfull");
+           document.getElementById("contact-form").reset();
+       location.reload();
+         },
+         error: function () {
+           // show an error message
+           alert("UnSuccessfull");
+         }});
+     }
+
+</script>
+<body>
+
+<form id="contact-form" method="post">
+ <div class="form-group">
+  <h4>Name:</h4>
+  <input type="text" id="name-input" placeholder="Name..." class="form-control" />
+ </div>
+ <div class="form-group">
+  <h4>Phone:</h4>
+  <input type="phone" id="phone-input" placeholder="Phone..." class="form-control" />
+ </div>
+ <div class="form-group">
+  <h4>Email:</h4>
+  <input type="email" id="email-input" placeholder="Email..." class="form-control" />
+ </div>
+ <div class="form-group">
+  <h4>Message:</h4>
+  <textarea id="description-input" rows="3" placeholder="Message…" class="form-control" ></textarea>
+ </div>
+ <div class="g-recaptcha" data-sitekey="6Lehe8oUAAAAAO4ckAmEv24UEIv2R2kQ011MSxDd" class="form-control"></div>
+ <button type="submit" onClick="submitToAPI(event)" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
+
