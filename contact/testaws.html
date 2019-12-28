@@ -1,5 +1,5 @@
 <html>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src='https://www.google.com/recaptcha/api.js'></script> 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript"> 
 
@@ -62,6 +62,9 @@ function submitToAPI(e) {
 </script>
 <body>
 
+Used this for reference: https://aws.amazon.com/blogs/architecture/create-dynamic-contact-forms-for-s3-static-websites-using-aws-lambda-amazon-api-gateway-and-amazon-ses<br/>
+Need to add this https://codeforgeek.com/google-recaptcha-node-js-tutorial/
+
 <form id="contact-form" method="post">
  <div class="form-group">
   <h4>Name:</h4>
@@ -79,7 +82,7 @@ function submitToAPI(e) {
   <h4>Message:</h4>
   <textarea id="description-input" rows="3" placeholder="Message…" class="form-control" ></textarea>
  </div>
- <div class="g-recaptcha" data-sitekey="6LfIo8oUAAAAANMGdkVCcOYwXNs8ASDJ60BNs6-p"></div> 
+ <div class="g-recaptcha" data-sitekey="6LfIo8oUAAAAANMGdkVCcOYwXNs8ASDJ60BNs6-p" class="form-control"></div>
  <button type="submit" onClick="submitToAPI(event)" class="btn btn-primary">Submit</button>
 </form>
 
