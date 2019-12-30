@@ -10,11 +10,28 @@
 
   <title>All Agile Ltd - Contact us</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Get Google and HotJar Analytics in early as possible -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1625936,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWCD0EWTPY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWCD0EWTPY');
+  </script>
 
-  <!-- Custom styles for this template -->
-  <link href="../css/full-width-pics.css" rel="stylesheet">
+  <!-- Bootstrap and custom CSS -->
+  <link href="../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../libs/full-width-pics.css" rel="stylesheet">
 
 </head>
 
@@ -67,30 +84,32 @@
               <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                   <div class="row">
-
-                      <div class="col-md-6">
-                          <div class="md-form mb-0">
-                              <input type="text" id="name" name="name" class="form-control">
-                              <label for="name" class="">Your name</label>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6">
-                          <div class="md-form mb-0">
-                              <input type="text" id="email" name="email" class="form-control">
-                              <label for="email" class="">Your email</label>
-                          </div>
-                      </div>
-
-                  </div>
-
-                  <div class="row">
                       <div class="col-md-12">
                           <div class="md-form mb-0">
-                              <input type="text" id="subject" name="subject" class="form-control">
-                              <label for="subject" class="">Subject</label>
+                              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                              <br/>
                           </div>
                       </div>
+                  </div>
+
+
+
+                  <div class="row">
+
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="email" name="email" class="form-control" placeholder="Your email address" required>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="phone" name="phone" class="form-control" placeholder="Your phone number">
+                          </div>
+                      </div>
+                      
+                      <br/>
+
                   </div>
 
                   <div class="row">
@@ -98,8 +117,7 @@
                       <div class="col-md-12">
 
                           <div class="md-form">
-                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                              <label for="message">Your message</label>
+                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="How can we help?" required></textarea>
                           </div>
 
                       </div>
@@ -107,10 +125,14 @@
 
               </form>
 
+              <div class="g-recaptcha" data-sitekey="6LfIo8oUAAAAANMGdkVCcOYwXNs8ASDJ60BNs6-p" class="form-control"></div>
+
               <div class="text-center text-md-left">
                   <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
               </div>
+
               <div class="status"></div>
+
           </div>
 
           <div class="col-md-3 text-center">
@@ -120,12 +142,12 @@
                   </li>
 
                   <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                      <p>+44 (0) 7740 300105</p>
+                    <p><a href="tel:+447740300105">+44 (0) 7740 300105</a></p>
                   </li>
 
                   <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                      <p>angelah@allagile.co.uk</p>
-                      <p>john@allagile.co.uk</p>
+                    <p><a href="mailto:john@allagile.co.uk?Subject=Please tell me more about...'" target="_top">john@allagile.co.uk</a></p>
+                    <p><a href="mailto:angelah@allagile.co.uk?Subject=Please tell me more about...'" target="_top">angelah@allagile.co.uk</a></p>
                   </li>
               </ul>
           </div>
@@ -137,15 +159,20 @@
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; All Agile Ltd 2019</p>
+    <div class="container m-0 text-right text-white">
+      <p>Copyright &copy; All Agile Limited 2019</p>
+      <p>Registered in England & Wales Company no. 09014676. Vat no. 257400516</p>
     </div>
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- JQuery and Recaptcha are only needed on pages with form input -->  
+  <script src='https://www.google.com/recaptcha/api.js'></script> 
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap and cookieinfo are needed on all pages -->
+  <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
 
 </body>
 
