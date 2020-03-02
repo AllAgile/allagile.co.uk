@@ -10,7 +10,7 @@
 
   <title>All Agile Ltd - Contact us</title>
 
-  <!-- Get Google and HotJar Analytics in early as possible --> 
+  <!-- Get Google and HotJar Analytics in early as possible -->
   <script>
       (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -32,7 +32,6 @@
   <!-- Bootstrap and custom CSS -->
   <link href="../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../libs/full-width-pics.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -52,15 +51,15 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-         <!--<li class="nav-item">
+         <!-- <li class="nav-item">
             <a class="nav-link" href="about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services">Services</a>
-          </li>-->
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="contact">Contact</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -74,73 +73,85 @@
   <section class="py-5">
     <div class="container">
 
-      <div class="container contact">
-        <div class="row">
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
 
-          <div class="col-md-9">
-            <div class="contact-form">
+      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+          a matter of hours to help you.</p>
 
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="fullname">First Name:</label>
-                <div class="col-sm-10">          
-                <input type="text" class="form-control" id="fullname" placeholder="Enter Your First Name" name="fullname">
-                </div>
+      <div class="row">
+
+          <div class="col-md-9 mb-md-0 mb-5">
+              <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="md-form mb-0">
+                              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                              <br/>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                  <div class="row">
+
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="email" name="email" class="form-control" placeholder="Your email address" required>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="phone" name="phone" class="form-control" placeholder="Your phone number">
+                          </div>
+                      </div>
+                      
+                      <br/>
+
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col-md-12">
+
+                          <div class="md-form">
+                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="How can we help?" required></textarea>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </form>
+
+              <div class="g-recaptcha" data-sitekey="6LfIo8oUAAAAANMGdkVCcOYwXNs8ASDJ60BNs6-p" class="form-control"></div>
+
+              <div class="text-center text-md-left">
+                  <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
               </div>
 
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Enter Your Email Address" name="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="phone">Phone Number:</label>
-                <div class="col-sm-10">          
-                <input type="text" class="form-control" id="phone" placeholder="Enter Last Name" name="phone">
-                </div>
-              </div>
-             
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="message">Message:</label>
-                <div class="col-sm-10">
-                <textarea class="form-control" rows="5" id="message" placeholder="Enter Your Message"></textarea>
-                </div>
-              </div>
-              <div class="form-group">        
-                <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Contact Us</button>
-                </div>
-              </div>
-            </div>
+              <div class="status"></div>
+
           </div>
 
-          
-          <div class="col-md-2">
-            <div class="contact-info">
-              <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-              <h2>Directly</h2>
-
+          <div class="col-md-3 text-center">
               <ul class="list-unstyled mb-0">
-                <li>
-                  <i class="fas fa-phone mt-4 fa-2x"></i>
-                  <p><a href="tel:+447740300105">07740 300105</a></p>
-                </li>
-                <li>
-                  <i class="fas fa-envelope mt-4 fa-2x"></i>
-                  <p><a href="mailto:john@allagile.co.uk?Subject=Please tell me more about...'" target="_top">john@allagile.co.uk</a></p>
-                  <p><a href="mailto:angelah@allagile.co.uk?Subject=Please tell me more about...'" target="_top">angelah@allagile.co.uk</a></p>
-                </li>
-                <li>
-                  <i class="fas fa-map-marker-alt fa-2x"></i>
-                  <p>Worcester, UK based</p>
-                </li>
+                  <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                      <p>Worcester, UK</p>
+                  </li>
+
+                  <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p><a href="tel:+447740300105">+44 (0) 7740 300105</a></p>
+                  </li>
+
+                  <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p><a href="mailto:john@allagile.co.uk?Subject=Please tell me more about...'" target="_top">john@allagile.co.uk</a></p>
+                    <p><a href="mailto:angelah@allagile.co.uk?Subject=Please tell me more about...'" target="_top">angelah@allagile.co.uk</a></p>
+                  </li>
               </ul>
-
-
-            </div>
           </div>
 
-        </div>
       </div>
 
     </div>
@@ -159,12 +170,9 @@
   <script src='https://www.google.com/recaptcha/api.js'></script> 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   
-
-  
-  <!-- Bootstrap and cookieinfo are needed on all pages
+  <!-- Bootstrap and cookieinfo are needed on all pages -->
   <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
- -->
 
 </body>
 
