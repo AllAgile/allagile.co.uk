@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body{
+  background-color:white;
+  overflow:hidden;
+}
+.postittopbar{
+  z-index:1;
+  position:absolute;
+  width:200px;
+  height:40px;
+  color:white;
+  font-weight: bold;
+}
+.postitbody{
+  margin-top:40px;
+  position:absolute;
+  width:200px;
+  height:100px;
+
+}
+.postittext{
+  position:absolute;
+  border-color:black;
+  width:180px;
+  height:140px;
+  position:absolute;
+  margin:10px;
+  font-family: 'Lato', sans-serif;
+  overflow:hide;
+}
