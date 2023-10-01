@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timebox Timer</title>
+  <script type="text/javascript">
+    var timers = [];
+    var currentTimer = 0;
+    var intervalId;
+
+    function startTimer() {
+      if (timers.length === 0) {
+        return;
+      }
+
+      var current = timers[currentTimer];
+      document.title = current.description + ' - ' + current.time;
+      current.time--;
+
+      if (current.time < 0) {
+        currentTimer++;
+        if (currentTimer >= timers.length) {
+          clearInterval(intervalId);
+          document.title = 'Countdown Timer';
+          return;
+        }
+        current = timers[currentTimer];
+      }
+
+      document.getElementById('description').innerHTML = current.description;
+      document.getElementById('time').innerHTML = current.time;
+    }
+
+    function addTimer() {
+      var description = document.getElementById('descriptionInput').value;
+      var time = parseInt(document.getElementById('timeInput').value);
+
+      if (isNaN(time)) {
+        alert('Please enter a valid number for time.');
+        return;
+      }
+
+      timers.push({
+        description: description,
+        time: time
+      });
+
+      document.getElementById('descriptionInput').value = '';
+      document.getElementById('timeInput').value = '';
+    }
+
+    function startCountdown() {
+      if (timers.length === 0) {
+        alert('Please add at least one timer.');
+        return;
+      }
+
+      intervalId = setInterval(startTimer, 1000);
+    }
+
+    function stopCountdown() {
+      clearInterval(intervalId);
+    }
+
+    function resetCountdown() {
+      clearInterval(intervalId);
+      timers = [];
+      currentTimer = 0;
+      document.title = 'Countdown Timer';
+      document.getElementById('description').innerHTML = '';
+      document.getElementById('time').innerHTML = '';
+    }
+  </script>
+</head>
+<body>
+  <h1>Countdown Timer</h1>
+
+  <div>
+    <label>Description:</label>
+    <input type="text" id="descriptionInput">
+  </div>
+
+  <div>
+    <label>Time:</label>
+    <input type="text" id="timeInput">
+  </div>
+
+  <button onclick="addTimer()">Add Timer</button>
+
+  <br><br>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="timers">
+    </tbody>
+  </table>
+
+  <br><br>
+
+  <div id="countdown">
+    <h2 id="description"></h2>
+    <h2 id="time"></h2>
+  </div>
+
+  <br><br>
+
+  <button onclick="startCountdown()">Start Countdown</button>
+  <button onclick="stopCountdown()">Stop Countdown</button>
+  <button onclick="resetCountdown()">Reset Countdown</button>
+
+  <script type="text/javascript">
+    function updateTimers() {
+      var tbody = document.getElementById('timers');
+      tbody.innerHTML = '';
+
+      for (var i = 0; i < timers.length; i++) {
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        td1.innerHTML = timers[i].description;
+        tr.appendChild(td1);
+        var td2 = document.createElement('td');
+        td2.innerHTML = timers[i].time;
+        tr.appendChild(td2);
+        tbody.appendChild(tr);
+      }
+    }
+
+    setInterval(updateTimers, 1000);
+  </script>
+</body>
+</html>
