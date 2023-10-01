@@ -13,7 +13,9 @@
       }
 
       var current = timers[currentTimer];
-      document.title = current.description + ' - ' + current.time;
+      var minutes = Math.floor(current.time / 60);
+      var seconds = current.time % 60;
+      document.title = current.description + ' - ' + minutes + 'm ' + seconds + 's';
       current.time--;
 
       if (current.time < 0) {
@@ -27,15 +29,34 @@
       }
 
       document.getElementById('description').innerHTML = current.description;
-      document.getElementById('time').innerHTML = current.time;
+      document.getElementById('time').innerHTML = minutes + 'm ' + seconds + 's';
     }
 
     function addTimer() {
       var description = document.getElementById('descriptionInput').value;
-      var time = parseInt(document.getElementById('timeInput').value);
+      var timeInput = document.getElementById('timeInput').value;
+      var timeArray = timeInput.split(':');
+      var time;
 
-      if (isNaN(time)) {
-        alert('Please enter a valid number for time.');
+      if (timeArray.length === 2) {
+        var minutes = parseInt(timeArray[0]);
+        var seconds = parseInt(timeArray[1]);
+
+        if (isNaN(minutes) || isNaN(seconds)) {
+          alert('Please enter a valid time in the format MM:SS.');
+          return;
+        }
+
+        time = minutes * 60 + seconds;
+      } else if (timeArray.length === 1) {
+        time = parseInt(timeArray[0]);
+
+        if (isNaN(time)) {
+          alert('Please enter a valid number for time.');
+          return;
+        }
+      } else {
+        alert('Please enter a valid time in the format MM:SS.');
         return;
       }
 
@@ -81,7 +102,8 @@
 
   <div>
     <label>Time:</label>
-    <input type="text" id="timeInput">
+    <input type="text" id="timeInput" placeholder="MM:SS or SS">
+    <span>(Enter time in minutes and seconds)</span>
   </div>
 
   <button onclick="addTimer()">Add Timer</button>
@@ -123,7 +145,7 @@
         td1.innerHTML = timers[i].description;
         tr.appendChild(td1);
         var td2 = document.createElement('td');
-        td2.innerHTML = timers[i].time;
+        td2.innerHTML = timers[i].time + 's';
         tr.appendChild(td2);
         tbody.appendChild(tr);
       }
