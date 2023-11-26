@@ -81,57 +81,21 @@
       <div class="row">
 
           <div class="col-md-9 mb-md-0 mb-5">
-              <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
-                  <div class="row">
-                      <div class="col-md-12">
-                          <div class="md-form mb-0">
-                              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
-                              <br/>
-                          </div>
-                      </div>
-                  </div>
+            <form action="https://api.web3forms.com/submit" method="POST">
 
+              <input type="hidden" name="access_key" value="c005177f-4dcd-4303-a075-d55447343cda">
+          
+              <input type="text" name="name" required>
+              <input type="email" name="email" required>
+              <textarea name="message" required></textarea>
+              <div class="h-captcha" data-captcha="true"></div>
+              <button type="submit">Email Us</button>
+          
+          </form>
+          
+          <script src="https://web3forms.com/client/script.js" async defer></script>
 
-
-                  <div class="row">
-
-                      <div class="col-md-6">
-                          <div class="md-form mb-0">
-                              <input type="text" id="email" name="email" class="form-control" placeholder="Your email address" required>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6">
-                          <div class="md-form mb-0">
-                              <input type="text" id="phone" name="phone" class="form-control" placeholder="Your phone number">
-                          </div>
-                      </div>
-                      
-                      <br/>
-
-                  </div>
-
-                  <div class="row">
-
-                      <div class="col-md-12">
-
-                          <div class="md-form">
-                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="How can we help?" required></textarea>
-                          </div>
-
-                      </div>
-                  </div>
-
-              </form>
-
-              <div class="g-recaptcha" data-sitekey="6LfIo8oUAAAAANMGdkVCcOYwXNs8ASDJ60BNs6-p" class="form-control"></div>
-
-              <div class="text-center text-md-left">
-                  <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-              </div>
-
-              <div class="status"></div>
 
           </div>
 
