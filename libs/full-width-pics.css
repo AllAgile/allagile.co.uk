@@ -14,3 +14,122 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+/* Resized JPEG fallback, then WebP via image-set. Originals stay in /img. */
+.bg-agile-scrum {
+  background-image: url("/img/agileandscrum-800.jpg");
+  background-image: image-set(
+    url("/img/agileandscrum-800.webp") type("image/webp"),
+    url("/img/agileandscrum-800.jpg") type("image/jpeg")
+  );
+}
+
+.bg-enterprise-settlers {
+  background-image: url("/img/enterprisesettlers-800.jpg");
+  background-image: image-set(
+    url("/img/enterprisesettlers-800.webp") type("image/webp"),
+    url("/img/enterprisesettlers-800.jpg") type("image/jpeg")
+  );
+}
+
+.bg-taskboard {
+  background-image: url("/img/taskboard-1500.jpg");
+  background-image: image-set(
+    url("/img/taskboard-1500.webp") type("image/webp"),
+    url("/img/taskboard-1500.jpg") type("image/jpeg")
+  );
+}
+
+@media (min-width: 768px) {
+  .bg-agile-scrum {
+    background-image: url("/img/agileandscrum-1600.jpg");
+    background-image: image-set(
+      url("/img/agileandscrum-1600.webp") type("image/webp"),
+      url("/img/agileandscrum-1600.jpg") type("image/jpeg")
+    );
+  }
+
+  .bg-enterprise-settlers {
+    background-image: url("/img/enterprisesettlers-1600.jpg");
+    background-image: image-set(
+      url("/img/enterprisesettlers-1600.webp") type("image/webp"),
+      url("/img/enterprisesettlers-1600.jpg") type("image/jpeg")
+    );
+  }
+}
+
+/* Bootstrap blue darkened so text clears 4.5:1 on white, and white text clears it on the button.
+   Underline keeps links distinct from body text (#0056b3 is only ~2.2:1 against #212529).
+   Scoped to main so the cookie bar keeps its own colours. */
+main a:not(.btn) {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+main a:not(.btn):hover,
+main a:not(.btn):focus {
+  color: #004085;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #004085;
+  border-color: #004085;
+}
+
+.btn-outline-primary {
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+.footer-area h2 {
+  color: #f8f9fa;
+}
+
+.footer-area a.text-muted {
+  color: #ced4da !important;
+}
+
+.footer-area a.text-muted:hover,
+.footer-area a.text-muted:focus {
+  color: #ffffff !important;
+}
+
+/* Default navbar link (white at 50%) is about 4.2:1 on #343a40. */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+
+label.form-label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+img[data-target="#videoModal"] {
+  cursor: pointer;
+}
+
+#videoscrumlake {
+  width: 100%;
+  height: auto;
+  background: #000;
+}

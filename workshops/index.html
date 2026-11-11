@@ -9,15 +9,22 @@
   <meta name="author" content="John Albrecht, All Agile Limited">
   <title>All Agile Limited - Our Workshops</title>
 
-  <meta property='og:title' content='All Agile Limited - Agility working with you, ' />
-  <meta property='og:image' content='http://allagile.co.uk/img/allagile.png' />
+  <link rel="canonical" href="https://allagile.co.uk/workshops/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta property='og:title' content='All Agile Limited - Our Workshops' />
+  <meta property='og:image' content='https://allagile.co.uk/img/allagile.png' />
   <meta property='og:description' content='All Agile Limited - The workshops we offer' />
-  <meta property='og:url' content='http://allagile.co.uk/workshops/' />
+  <meta property='og:url' content='https://allagile.co.uk/workshops/' />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-  <link href="libs/full-width-pics.css" rel="stylesheet">
+  <link href="/libs/full-width-pics.css" rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWCD0EWTPY"></script>
     <script>
@@ -46,13 +53,13 @@ mailing list -->
 
 <!-- Trust Pilot JS Goes here when I add Trust Pilot to the site -->
 
-<script src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1&showPolicyLink=1&privacyPage=%2Fpolicies%2Fprivacy%2F"></script>
 
 
 
   <!-- Bootstrap and custom CSS 
-  <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="libs/full-width-pics.css" rel="stylesheet">
+  <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/libs/full-width-pics.css" rel="stylesheet">
   -->
 
 </head>
@@ -104,6 +111,8 @@ mailing list -->
   </div>
 </header>
 
+<main>
+
 
   <!-- Content section -->
   <section class="py-5">
@@ -112,24 +121,6 @@ mailing list -->
 
       <h1 class="display-4">Our Workshops</h1>
   
-      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-              <div class="modal-content rounded-0">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="videoModalLabel">Introduction to Scrum Lake</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <video id="videoscrumlake" controls>
-                          <source src="https://scrumlake.com/images/scrumlake.mp4" type="video/mp4">
-                        </video>
-                  </div>
-              </div>
-          </div>
-      </div>
-
       <p class="lead">
         Do you want to have more fun and learn more with your team? Do you want to discover new ways of 
         working that will help you deliver awesome products and services to your customers? If so, you 
@@ -157,7 +148,10 @@ mailing list -->
                 to share their stories, challenges, and insights and come up with there own actions to take away.
               </p>
                           
-              <img src="https://scrumlake.com/images/attendees.png" class="img-fluid" alt="Just a small selection of Happy Scrum Lake participants from previous workshops - Gregory, Ovidiu, Jamie, Marion, Kapil, Richard, Gianni, Tom and Katrin" />
+              <picture>
+                  <source srcset="https://scrumlake.com/images/attendees.webp" type="image/webp">
+                  <img src="https://scrumlake.com/images/attendees.png" width="1400" height="475" class="img-fluid" alt="Just a small selection of Happy Scrum Lake participants from previous workshops - Gregory, Ovidiu, Jamie, Marion, Kapil, Richard, Gianni, Tom and Katrin">
+                </picture>
   
               <p class="lead">
                   We are very proud that Scrum Lake workshops are consistently well received, we sell 
@@ -168,7 +162,10 @@ mailing list -->
           </div>
           <div class="col-md-5">
   
-              <img src="https://scrumlake.com/images/scrumlakecanvas.png" class="img-fluid" alt="Scrum Lake Co-Creative Canvas" data-toggle="modal" data-target="#videoModal" />
+              <picture>
+                  <source srcset="https://scrumlake.com/images/scrumlakecanvas.webp" type="image/webp">
+                  <img src="https://scrumlake.com/images/scrumlakecanvas.png" width="1200" height="1230" class="img-fluid" alt="Scrum Lake Co-Creative Canvas" loading="lazy" data-toggle="modal" data-target="#videoModal" role="button" tabindex="0">
+                </picture>
   
           </div>
       </div>
@@ -190,7 +187,10 @@ mailing list -->
               </p>
           </div>
           <div class="col-md-5 order-md-1">
-              <img src="/img/scrumlakelakeside.png" class="img-fluid" alt="Scrum Lake Lakeside, Scrum Simulation" />
+              <picture>
+                  <source srcset="/img/scrumlakelakeside-1200.webp" type="image/webp">
+                  <img src="/img/scrumlakelakeside-1200.jpg" width="1200" height="717" class="img-fluid" alt="Scrum Lake Lakeside, Scrum Simulation" loading="lazy">
+                </picture>
           </div>
       </div>
   
@@ -211,8 +211,10 @@ mailing list -->
   
           </div>
           <div class="col-md-5">
-              <img src="/img/scrumbuilders.jpeg" class="img-fluid"
-                  alt="A Game of Scrum Builders">
+              <picture>
+                  <source srcset="/img/scrumbuilders-984.webp" type="image/webp">
+                  <img src="/img/scrumbuilders-984.jpg" width="984" height="738" class="img-fluid" alt="A Game of Scrum Builders" loading="lazy">
+                </picture>
           </div>
       </div>
 
@@ -234,7 +236,10 @@ mailing list -->
 
           </div>
           <div class="col-md-5 order-md-1">
-              <img src="/img/userstory.png" class="img-fluid" alt="User Story Writing and Estimation" />
+              <picture>
+                  <source srcset="/img/userstory-1200.webp" type="image/webp">
+                  <img src="/img/userstory-1200.jpg" width="1200" height="704" class="img-fluid" alt="User Story Writing and Estimation" loading="lazy">
+                </picture>
           </div>
       </div>
   
@@ -257,8 +262,10 @@ mailing list -->
   
           </div>
           <div class="col-md-5">
-              <img src="/img/userstorymapping.jpeg" class="img-fluid"
-                  alt="User Story Mapping">
+              <picture>
+                  <source srcset="/img/userstorymapping-1000.webp" type="image/webp">
+                  <img src="/img/userstorymapping-1000.jpg" width="1000" height="1000" class="img-fluid" alt="User Story Mapping" loading="lazy">
+                </picture>
           </div>
       </div>
 
@@ -284,7 +291,10 @@ mailing list -->
 
           </div>
           <div class="col-md-5 order-md-1">
-              <img src="/img/examplemapping.png" class="img-fluid" alt="Example Mapping, agreeing on what behaviors" />
+              <picture>
+                  <source srcset="/img/examplemapping-1200.webp" type="image/webp">
+                  <img src="/img/examplemapping-1200.jpg" width="1200" height="717" class="img-fluid" alt="Example Mapping, agreeing on what behaviors" loading="lazy">
+                </picture>
           </div>
       </div>
 
@@ -303,6 +313,25 @@ mailing list -->
 
 </section>
 
+      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content rounded-0">
+                  <div class="modal-header">
+                      <h2 class="h5 modal-title" id="videoModalLabel">Introduction to Scrum Lake</h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <video id="videoscrumlake" controls preload="none" playsinline width="720" height="405"></video>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+</main>
+
 <footer class="footer-area py-5 bg-dark">
 
   <div class="footer-big">
@@ -312,20 +341,23 @@ mailing list -->
               
               <div class="col-md-3 col-sm-12">
 
-                  <a href="/"><img src="/img/allagile.png" alt="Scrum Lake" class="img-fluid"></a>
+                  <a href="/"><picture>
+                  <source srcset="/img/allagile-480.webp" type="image/webp">
+                  <img src="/img/allagile-480.png" width="480" height="318" alt="All Agile" class="img-fluid" loading="lazy">
+                </picture></a>
 
               </div>
 
 
               <div class="col-md-3 col-sm-4">
 
-                  <h5>Navigate</h5>
+                  <h2 class="h5">Navigate</h2>
 
                   <ul class="list-unstyled text-small">
 
                       <li><a class="text-muted" href="/workshops/">Our Workshops</a></li>
                       <li><a class="text-muted" href="/services/">Our Services</a></li>
-                      <li><a class="text-muted" href="#">Contact Us</a></li>
+                      <li><a class="text-muted" href="/contact/">Contact Us</a></li>
 
                   </ul>
 
@@ -334,7 +366,7 @@ mailing list -->
 
               <div class="col-md-3 col-sm-4">
 
-                  <h5>Legal</h5>
+                  <h2 class="h5">Legal</h2>
 
                   <ul class="list-unstyled text-small">
 
@@ -349,12 +381,12 @@ mailing list -->
 
               <div class="col-md-3 col-sm-4">
 
-                  <h5>Connect with Us</h5>
+                  <h2 class="h5">Connect with Us</h2>
 
                   <ul class="list-unstyled text-small">
                       <li><a class="text-muted" href="https://www.linkedin.com/company/allagile/"><i
                                   class="fab fa-linkedin-in">&nbsp;</i>All Agile LinkedIn Updates</a></li>
-                      <li><a class="text-muted" href="https://www.scrumlake.com/events/scrumlake"><i
+                      <li><a class="text-muted" href="https://scrumlake.com/"><i
                                   class="fas fa-globe">&nbsp;</i>Scrumlake.com</a></li>
                       <li><a class="text-muted" href="mailto:john@allagile.co.uk"><i
                                       class="far fa-envelope">&nbsp;</i>john@allagile.co.uk</a></li>
@@ -374,7 +406,7 @@ mailing list -->
       <div class="row">
           <div class="col-md-12">
               <div class="container m-0 text-right text-white">
-                Copyright &copy; All Agile Limited 2023
+                Copyright &copy; All Agile Limited 2026
                 <br/>
                 Registered in England & Wales Company no. 10363647. Vat no. 257400516
               </div>
@@ -392,6 +424,32 @@ crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 crossorigin="anonymous"></script>
+
+
+<script>
+  (function () {
+    var modal = document.getElementById('videoModal');
+    var video = document.getElementById('videoscrumlake');
+    var src = 'https://scrumlake.com/images/scrumlake.mp4';
+    if (!modal || !video || !window.jQuery) {
+      return;
+    }
+    jQuery(modal).on('show.bs.modal', function () {
+      if (video.getAttribute('src') !== src) {
+        video.setAttribute('src', src);
+      }
+    });
+    jQuery(modal).on('hide.bs.modal', function () {
+      video.pause();
+    });
+    jQuery('[data-target="#videoModal"]').on('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        jQuery(modal).modal('show');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
